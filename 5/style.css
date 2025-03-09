@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+  color: white;
+}
+
+*::selection {
+  background-color: white;
+  color: #95c11e;
+}
+body::-webkit-scrollbar{
+  display: block;
+  width: 8px;
+  background-color: #95c11e;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 50px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  perspective: 800px;
+}
+
+#nav {
+  height: 154px;
+  width: 100%;
+  display: flex;
+  padding: 0 150px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  position: fixed;
+  z-index: 99;
+}
+
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: #acde22;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+}
+
+#cursor-blur {
+  height: 400px;
+  width: 400px;
+  background-color: #84aa1a3b;
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(50px);
+  z-index: 9;
+}
+
+#nav img {
+  height: 75px;
+
+}
+
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: fixed;
+}
+
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+
+#page1 h1 {
+  font-size: 7.5vw;
+  font-weight: 900;
+  position: relative;
+}
+
+#page1 h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 10px 0 20px 0;
+}
+
+#page1 p {
+  font-size: 18px;
+  font-weight: 500;
+  width: 40%;
+}
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll; 
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 140px;
+  font-weight: 700;
+  color: transparent;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  -webkit-text-stroke: 2px #95c11e;
+  transition: all 0.7s linear;
+}
+#scroller h4:hover {
+  color: #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+  
+}
+
+#about-us {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-around;
+  position:relative;
+  z-index: 10;
+  align-items: center;
+}
+
+#about-us img {
+  height: 220px;
+  width: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+#about-us-in {
+  width: 40%;
+  text-align: center;
+}
+#about-us-in h3 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+#about-us-in p {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+#cards-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+  position: relative;
+  z-index: 10;
+}
+.card {
+  height: 80%;
+  width: 28%;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all ease 0.6s;
+
+}
+#card1 {
+  background-image: url(./Assests/card1.avif);
+}
+#card2 {
+  background-image: url(./Assests/card2.webp);
+}#card3 {
+  background-image: url(./Assests/card3.avif);
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 20px;
+  padding-top: 120px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+.card:hover .overlay{
+  opacity: 1;
+}
+.card:hover {
+  transform: rotate3d(-1,1,0,20deg);
+}
+
+.overlay h4 {
+  color: #000;
+  font-size: 40px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.overlay p {
+  color: #000;
+  font-size: 18px;
+}
+
+#green-div {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right top,#96c11e 60%, #54d51d )
+}
+#green-div h4 {
+  width: 50%;
+  font-size: 30px;
+  text-transform: uppercase; 
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-weight: 800;
+}
+#green-div img {
+  height: 100%;
+  object-fit: cover;
+  width: 12%;
+}
+
+#page3 {
+  height: autp;
+  width: 100%;
+  display: flex;
+  background-color: #000;
+ padding: 120px 0 150px 0;
+  justify-content: center;
+}
+#page3 > p {
+  font-size: 35px;
+  font-weight: 700;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+  align-items: center;
+  position: relative;
+}
+
+ /* #page3 img {
+  position: absolute;
+  height: 60px;
+} 
+ 
+ #page3 #colon1 {
+  
+  left: 15%;
+  top: 25%;
+}  
+ #page3 #colon2 {
+  bottom: 30%;
+  right: 15%;
+}   */
+
+#page4 {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 0 120px 0;
+  gap: 70px;
+}
+.elem {
+  height: 70%;
+  width: 20%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+.elem h2 {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  color: #000;
+  font: 800;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  position: absolute;
+  z-index: 10;
+  transition: all ease 0.8s;
+}
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: all ease 0.8s;
+  scale: 1.1;
+}
+.elem h2:hover {
+  color: white;
+  background-color: transparent;
+
+}
+.elem:hover img {
+  scale: 1;
+}
+#page4 h1 {
+  font-size: 90px;
+  position: absolute;
+  top: -15%;
+  font: 900;
+  color: black;
+  font-family: gilroy;
+  -webkit-text-stroke: 0.5px white;
+}
+#footer {
+  height: 40vh;
+  width: 100%;
+  background-color: #95c11e;
+  background: linear-gradient(to right top, #95c11e 60, #54d51d);
+
+}
